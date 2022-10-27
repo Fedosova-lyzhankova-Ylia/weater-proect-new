@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { API_KEY } from "../config";
-
 import Card from "./Card";
 import InfiOneDay from "./InfiOneDay";
 import { mounh } from "../constants";
 import logo from "../assets/icons/logo.ico"
-import theme from "../assets/icons/theme.png"
-
+import themes from "../assets/icons/themes.png"
+import { lightTheme, darkTheme } from './globalStyle/theme';
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./globalStyle/GlobalStyle";
 
 function Form() {
   const [weather, setWeather] = useState({});
@@ -25,6 +26,7 @@ function Form() {
     console.log(e.target.value);
   };
 
+
   useEffect(() => {
     fetch(
       `https://pro.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&APPID=${API_KEY}&lang=ru`
@@ -39,11 +41,26 @@ function Form() {
       });
   }, [city]);
 
+  const [listGhangetTheme, setListGhangetTheme] = useState('');
+  const setColor = (color) => localStorage.setItem('Color', color);
+  const themeToggler = (e) => {
+    setColor(e.target.value);
+    setListGhangetTheme(localStorage.getItem('Color'));
+    localStorage.getItem('Color');
+  };
+
+  useEffect(() => {
+    setListGhangetTheme(localStorage.getItem('Color'));
+  }, []);
+  const theme = listGhangetTheme === 'light' ? lightTheme : darkTheme;
+
 
 
   return (
     
   <>
+<ThemeProvider theme={theme}>
+  <GlobalStyle/>
     <div className="header">
       <div className="vraper">
         <div className="logo">
@@ -53,7 +70,9 @@ function Form() {
       </div>
       <div className="vraper">
         <div className="smenaTheme">
-          <img src={theme} alt="Смена темы" />
+          <button onChange={themeToggler}
+        defaultValue={localStorage.getItem('Color')}
+        ><img src={themes} alt="Смена темы" /></button>
         </div>
         <div>
           <input
@@ -112,7 +131,7 @@ function Form() {
       </div>
 </div>
     </div>
-   
+    </ThemeProvider>
     </>
 
   );
