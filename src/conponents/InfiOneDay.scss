@@ -1,0 +1,101 @@
+@import '../style/variables.scss';
+.home{
+    font-size: 30px;
+    display: flex;
+    height: 300px;
+}
+// 1 блок
+.this_day {
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    background: $light-background;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+  }
+  .icon_weather {
+    width: 119px;
+    height: 119px;
+  }
+  .top_blok {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .this_day_name {
+    font-size: 40px;
+    color: $light-color;
+  }
+  .this_temp {
+    font-size: 96px;
+    font-weight: 500;
+    color: $primary-color;
+  }
+    .this_time,
+    .this_city {
+      color: $base-color;
+      font-size: 25px;
+    }
+  
+// 2 блок
+
+
+.day_info {
+    position: relative;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    background:$light-background;
+    margin-left: 40px;
+  }
+  .сloud{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .day_info_items{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .icon_info_info {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 1px 4px 10px -1px rgba(71, 148, 255, 0.448);
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+
+  .name_info_info  {
+font-size: 14px;
+color: $base-color;
+margin: 50px;
+margin-top: 20px;
+margin-left: 20px;
+  }
+  .value_info{
+    z-index: 2;
+  }
+
+  .value_info_info {
+    font-size: 25px;
+    color: $light-color;
+    margin: 35px;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+  
+
+
+
+

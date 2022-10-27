@@ -1,0 +1,57 @@
+@import "../style/variables.scss";
+
+.vraper{
+    display: flex;
+    align-items: center;
+}
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom:15px;
+}
+.logo{
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.tuitle{
+    color: $primary-color;
+}
+.smenaTheme{
+    width: 35px;
+    height: 35px;
+}
+.input{
+    padding: 10px;
+    width: 194px;
+    height: 37px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+.button{ 
+    height: 37px;
+    width: 37px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.card_card_card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin-top: 8px;
+    width: 100%;
+    background: $light-background;
+    box-shadow: $box-shadow;
+    border-radius:  $border-radius $border-radius;
+}
+
+
+
+
+

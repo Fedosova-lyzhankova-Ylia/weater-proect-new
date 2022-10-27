@@ -1,0 +1,36 @@
+@import "../style/variables.scss";
+.one_day_card{
+    display: flex;
+    flex-direction: column;
+    background: $card-background-light;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 240px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 15px;
+}
+.day_nedela{
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: $base-color;
+}
+.day_card{
+    margin-bottom: 3px;
+    font-size: 20px;
+    color: $light-color;
+}
+.day_temp_card{
+    font-size: 18px;
+    color:$light-color;
+}
+.day_night_card{
+        font-size: 13px;
+    color: $base-color;
+    margin-bottom: 6px;
+}
+.verer_card, .info_card{
+    font-size: 13px;
+    color: $base-color;
+}
