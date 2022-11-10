@@ -10,7 +10,7 @@
     width: 100%;
     justify-content: space-between;
     font-size: 30px;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 .logo{
     margin-right: 20px;
@@ -32,12 +32,15 @@
     border-radius: 5px;
     font-size: 16px;
     outline: none;
+    background:$body-background-light;
+    color: #fff;
 }
 .button{ 
     height: 37px;
     width: 37px;
     border-radius: 5px;
     border: 1px solid lightgray;
+    background:$body-background-light;
 }
 .card_card_card{
     display: flex;
@@ -49,6 +52,18 @@
     background: $light-background;
     box-shadow: $box-shadow;
     border-radius:  $border-radius $border-radius;
+}
+
+.button_theme{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.842);
+    border-radius: 50%;
+    border:none;
 }
 
 

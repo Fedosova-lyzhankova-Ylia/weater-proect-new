@@ -2,13 +2,13 @@ import React from "react";
 import "./Form.scss";
 import "./Card.scss";
 
-function Card({ date, speed, icon_id, temp_min, temp_max, veter }) {
+function Card({ date, speed, icon_id, temp_min, temp_max, veter,  nedela }) {
   return (
     
      <div className="card">
         <div className="one_day_card">
           <div className="day_card">{date}</div>
-          <div className="day_nedela"></div>
+          <div className="day_nedela">{nedela}</div>
           <div className="img_card">
             <img
               src={`http://openweathermap.org/img/wn/${icon_id}@2x.png`}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { API_KEY } from "../config";
 import Card from "./Card";
 import InfiOneDay from "./InfiOneDay";
-import { mounh } from "../constants";
+import { mounh, nedela } from "../constants";
 import logo from "../assets/icons/logo.ico"
 import themes from "../assets/icons/themes.png"
 import { lightTheme, darkTheme } from './globalStyle/theme';
@@ -35,31 +35,23 @@ function Form() {
       .then((data) => {
         setWeather(data.list[0]);
         setFife(
-          data.list.filter((reading) => reading.dt_txt.includes("12:00:00"))
+          data.list.filter((reading) => reading.dt_txt.includes("12:00:00")),
         );
         setСityName(data);
       });
   }, [city]);
 
-  const [listGhangetTheme, setListGhangetTheme] = useState('');
-  const setColor = (color) => localStorage.setItem('Color', color);
-  const themeToggler = (e) => {
-    setColor(e.target.value);
-    setListGhangetTheme(localStorage.getItem('Color'));
-    localStorage.getItem('Color');
-  };
+  const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    setListGhangetTheme(localStorage.getItem('Color'));
-  }, []);
-  const theme = listGhangetTheme === 'light' ? lightTheme : darkTheme;
-
-
+  const switchTheme = () => {
+      theme === "light" ? setTheme("dark") : setTheme("light");
+    };
+  
 
   return (
     
   <>
-<ThemeProvider theme={theme}>
+<ThemeProvider theme={theme !== "dark" ? lightTheme : darkTheme}>
   <GlobalStyle/>
     <div className="header">
       <div className="vraper">
@@ -69,11 +61,7 @@ function Form() {
         <div className="tuitle">React weather</div>
       </div>
       <div className="vraper">
-        <div className="smenaTheme">
-          <button onChange={themeToggler}
-        defaultValue={localStorage.getItem('Color')}
-        ><img src={themes} alt="Смена темы" /></button>
-        </div>
+      <button className="button_theme" onClick={switchTheme}> <img src={themes} alt="Смена темы"/></button>
         <div>
           <input
             className="input"
@@ -120,6 +108,7 @@ function Form() {
         ${date.getDate()}
         ${mounh[date.getMonth()].slice(0, 3)}
       `}
+              nedela={nedela[date.getDay()]}
               icon_id={i.weather[0].icon}
               temp_min={Math.round(i.main?.temp_min)}
               temp_max={Math.round(i.main?.temp_max)}

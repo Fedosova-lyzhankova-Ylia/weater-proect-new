@@ -1,6 +1,12 @@
 import React from "react";
 import "./InfiOneDay.scss";
 import сloud from "../assets/imeges/сloud.png"
+import Clock from "./Clock";
+import pressure from "../assets/icons/pressure.png"
+import temper from "../assets/icons/temper.png"
+import veter from "../assets/icons/veter.png"
+import ocadki from "../assets/icons/ocadki.png"
+
 
 function InfiOneDay({ temp, cityName, icon_id, temp_onfo , davlenie_info, ocadki_info, veter_info }) {
   return (
@@ -16,7 +22,9 @@ function InfiOneDay({ temp, cityName, icon_id, temp_onfo , davlenie_info, ocadki
         </div>
         <div className="boton_blok">
           <div className="this_time">
-            Время: <span>21.35</span>
+            Время: <span>
+              <Clock/>
+            </span>
           </div>
           <div className="this_city">
             Город: <span>{cityName}</span>
@@ -30,10 +38,10 @@ function InfiOneDay({ temp, cityName, icon_id, temp_onfo , davlenie_info, ocadki
         <div className="day_info_items">
           <img className="сloud"  src={сloud} alt="облака" />
           <div className="icon_info">
-            <div className="icon_info_info"></div>
-            <div className="icon_info_info"></div>
-            <div className="icon_info_info"></div>
-            <div  className="icon_info_info"></div>
+            <div className="icon_info_info"><img width="30" src={temper} alt="Температура" /></div>
+            <div className="icon_info_info"><img src={pressure} alt="давление" /></div>
+            <div className="icon_info_info"><img src={ocadki} alt="Осадки" /></div>
+            <div  className="icon_info_info"><img src={veter} alt="Скорость ветра" /></div>
           </div>
           <div className="name_info">
             <div className="name_info_info">Температура:</div>

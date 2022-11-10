@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
   }
   .this_day_name {
     font-size: 40px;
@@ -35,8 +35,10 @@
   }
     .this_time,
     .this_city {
+      display: flex;
       color: $base-color;
       font-size: 25px;
+      gap: 15px;
     }
   
 // 2 блок
